@@ -1,10 +1,15 @@
-package app.nocamelstyle.myresumeapp
+package app.nocamelstyle.myresumeapp.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.fragment.app.commit
+import app.nocamelstyle.myresumeapp.fragments.PortfolioContainerFragment
+import app.nocamelstyle.myresumeapp.R
+import app.nocamelstyle.myresumeapp.fragments.SettingsFragment
 import app.nocamelstyle.myresumeapp.databinding.ActivityMainBinding
+import app.nocamelstyle.myresumeapp.fragments.AboutMeFragment
+import app.nocamelstyle.myresumeapp.fragments.PortfolioAllFragment
+import app.nocamelstyle.myresumeapp.toast
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
@@ -23,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
             val fragment = when(it.itemId) {
                 R.id.bottom_menu_item_profile -> AboutMeFragment()
-                R.id.bottom_menu_item_projects -> PortfolioContainerFragment()
+                R.id.bottom_menu_item_projects -> PortfolioAllFragment()
                 else -> SettingsFragment()
             }
             supportFragmentManager.commit { replace(binding.frame.id, fragment) }

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <FrameLayout
         android:id="@+id/frame"
@@ -16,7 +16,7 @@
 
         <fragment
             android:id="@+id/fragment"
-            android:name="app.nocamelstyle.myresumeapp.AboutMeFragment"
+            android:name="app.nocamelstyle.myresumeapp.fragments.AboutMeFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </FrameLayout>

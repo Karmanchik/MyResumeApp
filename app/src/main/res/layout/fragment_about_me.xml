@@ -1,14 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutMeFragment">
+    tools:ignore="ContentDescription"
+    tools:context=".fragments.AboutMeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="vertical">
 
-</FrameLayout>
+
+        <ImageView
+            android:scaleType="centerCrop"
+            android:maxHeight="500dp"
+            android:id="@+id/avatarIV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Andrey Kormachenko" />
+
+        <TextView
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="Связь со мной" />
+
+        <TableLayout
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/github_link_iv"
+                    style="@style/social_link_icon"
+                    android:src="@drawable/github" />
+
+                <ImageView
+                    android:id="@+id/email_link_iv"
+                    style="@style/social_link_icon"
+                    android:src="@drawable/email" />
+
+                <ImageView
+                    android:id="@+id/linkedin_link_iv"
+                    style="@style/social_link_icon"
+                    android:src="@drawable/linkedin" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/telegram_link_iv"
+                    style="@style/social_link_icon"
+                    android:src="@drawable/telegram" />
+
+                <ImageView
+                    android:id="@+id/whatsapp_link_iv"
+                    style="@style/social_link_icon"
+                    android:src="@drawable/whatsapp" />
+
+                <ImageView
+                    android:id="@+id/skype_link_iv"
+                    style="@style/social_link_icon"
+                    android:src="@drawable/skype" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <TextView
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Навыки" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:id="@+id/skillsRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>
