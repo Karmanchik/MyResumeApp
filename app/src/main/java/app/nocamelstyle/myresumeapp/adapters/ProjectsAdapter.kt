@@ -1,6 +1,8 @@
 package app.nocamelstyle.myresumeapp.adapters
 
 import android.content.Context
+import android.graphics.BitmapFactory
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,6 +32,9 @@ class ProjectsAdapter(val ctx: Context, val projects: List<Project>): RecyclerVi
                 putExtra("project", projects[position])
             }
         }
+        holder.imageView.setImageBitmap(
+            BitmapFactory.decodeStream(ctx.assets.open(projects[position].iconName))
+        )
     }
 
     override fun getItemCount() = projects.size

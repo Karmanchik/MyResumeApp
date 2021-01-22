@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
             val fragment = when(it.itemId) {
                 R.id.bottom_menu_item_profile -> AboutMeFragment()
-                R.id.bottom_menu_item_projects -> PortfolioAllFragment()
+                R.id.bottom_menu_item_projects -> PortfolioContainerFragment()
                 else -> SettingsFragment()
             }
             supportFragmentManager.commit { replace(binding.frame.id, fragment) }

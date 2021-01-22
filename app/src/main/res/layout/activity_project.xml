@@ -12,7 +12,7 @@
         android:orientation="vertical">
 
         <ImageView
-            android:maxHeight="300dp"
+            android:maxHeight="600dp"
             android:id="@+id/project_details_avatar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

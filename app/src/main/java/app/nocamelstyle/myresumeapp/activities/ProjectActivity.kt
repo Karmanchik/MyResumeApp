@@ -1,6 +1,7 @@
 package app.nocamelstyle.myresumeapp.activities
 
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -26,6 +27,9 @@ class ProjectActivity : AppCompatActivity() {
         project = intent.getSerializableExtra("project") as Project
 
         binding.apply {
+            projectDetailsAvatar.setImageBitmap(
+                BitmapFactory.decodeStream(assets.open(project.fileName))
+            )
             projectDetailsName.text = project.name
             projectDetailsDescription.text = project.description
 

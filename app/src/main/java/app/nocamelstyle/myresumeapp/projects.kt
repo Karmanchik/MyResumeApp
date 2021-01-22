@@ -12,47 +12,59 @@ import java.io.Serializable
 //Irregular
 
 class Project(
+    val id: Int,
     val name: String,
-    private val fileName: String,
+    val fileName: String,
+    val iconName: String,
     val skills: List<String>,
     val description: String,
     val websiteUrl: String?,
     val androidUrl: String?,
     val iOSUrl: String?
-): Serializable {
-    val imgFromAssets get() = "assets//$fileName"
-}
+): Serializable
 
 val projects = listOf(
     Project(
+        id = 0,
         name = "FriendZone",
-        fileName = "1.jpg",
-        skills = listOf("kotlin", "OOP", "Firebase", "Glide", "Retrofit", "Billing system",
-            "Facebook SDK", "Google Map", "Intercom"),
-        description = "FriendZone is an application designed to bring like-minded people together. " +
-                "We all want to meet someone who shares our interests and make a lasting connection. " +
-                "Finding that connection can be a daunting task in this age where everyone " +
-                "lives in the fast lane.",
+        fileName = "friendzone_image.png",
+        iconName = "friendzone_logo.png",
+        skills = listOf("kotlin", "OOP", "Firebase Crashlitics", "Glide", "Retrofit", "Billing system",
+            "Facebook SDK", "Google Map", "Intercom", "Coroutines", "Synthetics", "ViewBinding",
+            "Admob", "InMobi", "Firebase RealtimeDatabase", "Firebase Remote Config",
+            "Firebase Analytics", "Firebase Cloud Messaging", "Firebase In-App Messaging"),
+        description = "FriendZone - приложение, предназначенное для объединения единомышленников. " +
+                "Мы все хотим встретить кого-то, кто разделяет наши интересы, и установить прочную связь. " +
+                "Найти эту связь может быть непростой задачей в наш век, когда все живут в быстром темпе.",
         websiteUrl = "https://thefriendzone.app/",
         androidUrl = "https://play.google.com/store/apps/details?id=com.app.friendzone",
         iOSUrl = null
     ),
     Project(
+        id = 1,
         name = "IPHK",
-        fileName = "1.jpg",
-        skills = listOf("kotlin", "OOP"),
+        fileName = "iphk_image.png",
+        iconName = "iphk_logo.png",
+        skills = listOf("kotlin", "OOP", "RxJava", "Navigation Component", "Glide", "Dagger", "swift",
+            "retrofit", "Groupie", "Timber", "Firebase Crashlitics", "Firebase Analytics", "Biometric"
+        ), //todo: add iOS stack
         description = "Мобильное приложение для пациентов ИПХиК (Институт пластической хирургии и косметологии).\n" +
                 "В приложении вы сможете узнать об услугах, докторах и технологиях Института красоты на Ольховке в удобном формате.\n" +
                 "Выбирайте нужное время и записывайтесь к доктору прямо в приложении.\n" +
                 "Приложение вовремя напомнит о приёме, а также пришлет вам результаты вашего посещения после приёма у доктора.",
-        websiteUrl = null,
+        websiteUrl = "https://iphk.ru/",
         androidUrl = "https://play.google.com/store/apps/details?id=com.iphk.mobile",
-        iOSUrl = null
+        iOSUrl = "https://apps.apple.com/us/app/%D0%B8%D0%BF%D1%85%D0%B8%D0%BA-%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%B9-%D0%BA%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82-%D0%BF%D0%B0%D1%86%D0%B8%D0%B5%D0%BD%D1%82%D0%B0/id1516518539"
     ),
     Project(
+        id = 2,
         name = "FinishWorker",
-        fileName = "1.jpg",
-        skills = listOf("kotlin", "OOP"),
+        fileName = "finish_worker_image.jpg",
+        iconName = "finish_worker_logo.png",
+        skills = listOf("kotlin", "OOP", "MVVM", "Dagger", "Coroutines", "Glide", "Realm",
+            "Retrofit", "Gson", "Firebase Analytics", "Firebase Realtime Database",
+            "Firebase Messaging", "Firebase Crashlytics", "DataBinding"
+        ), //todo: add stack iOS
         description = "Finish Worker — это удобный онлайн-сервис, через который\n" +
                 "клиенты могут заказать, оплатить и получить отчеты о финишных\n" +
                 "ремонтно-строительных работах.\n" +
@@ -65,12 +77,15 @@ val projects = listOf(
                 "будет оказывать услуги и какие материалы будут использованы.",
         websiteUrl = null,
         androidUrl = "https://play.google.com/store/apps/details?id=com.finishworker",
-        iOSUrl = null
+        iOSUrl = "https://apps.apple.com/us/app/finish-worker/id1499489035"
     ),
     Project(
+        id = 3,
         name = "Irregular",
-        fileName = "1.jpg",
-        skills = listOf("kotlin", "OOP"),
+        fileName = "irregular_image.jpg",
+        iconName = "irregular_logo.png",
+        skills = listOf("Java", "OOP", "Glide", "Retrofit", "Realm", "Butterknife", "Dagger",
+            "Firebase ads", "Firebase Messaging", "Firebase Analytics", "Billing system"),
         description = "Для изучающих английский язык наше приложение поможет легко освоить тему " +
                 "irregular verbs. Уникальная методика запоминания позволит быстро и без особых " +
                 "проблем выучить неправильные глаголы английского языка.",
@@ -79,18 +94,26 @@ val projects = listOf(
         iOSUrl = null
     ),
     Project(
+        id = 4,
         name = "Judebo - работа, вакансии, резюме",
-        fileName = "1.jpg",
-        skills = listOf("kotlin", "OOP"),
+        fileName = "judebo_image.png",
+        iconName = "judebo_logo.jpg",
+        skills = listOf("kotlin", "OOP", "Firebase Crashlitics", "Admob", "Google Maps",
+            "Retrofit", "Realm", "Synthetics"
+        ),
         description = "Вакансии, резюме, курсы повышения квалификации, образовательные программы.",
         websiteUrl = "https://ru.judebo.com/search_job/",
         androidUrl = "https://play.google.com/store/apps/details?id=com.byte4b.judebo",
         iOSUrl = null
     ),
     Project(
+        id = 5,
         name = "KnowMe",
-        fileName = "1.jpg",
-        skills = listOf("kotlin", "OOP"),
+        fileName = "knowme_image.png",
+        iconName = "knowme_logo.jpg",
+        skills = listOf("kotlin", "OOP", "NFC", "Retrofit", "Firebase Crashlitics",
+            "Camera", "QRScaner", "Firebase ML", "swift"
+        ), //todo: add stack iOS
         description = "Приложение повышает безопасность сотрудников строительных и других компаний, " +
                 "деятельность которых находится в зоне повышенного риска. Благодаря этому приложению " +
                 "вы можете получить быстрый доступ к жизненно важной информации о человеке в случае " +
@@ -103,18 +126,23 @@ val projects = listOf(
         iOSUrl = "https://apps.apple.com/us/app/knowmesos/id1499710935"
     ),
     Project(
+        id = 6,
         name = "CryptoStumped",
-        fileName = "1.jpg",
-        skills = listOf("kotlin", "OOP"),
-        description = "The app is a client part of the Cryptostamped service, and allows you to scan " +
-                "QR and DATAMATRIX codes created by us, as well as NFC tags. The content of the " +
-                "codes we created opens in a structured form. The app also allows you to scan all " +
-                "other QR codes and NFC tags, not just our own. In this case, their web content is " +
-                "opened by the built-in browser. Other content is simply displayed on the screen. " +
-                "The app allows you to manually enter our service IDs, in cases when it is no longer " +
-                "possible to read them from the QR code. The ID can be find on a sticker next to the " +
-                "QR code. The app optimizes the device's camera settings to read QR codes more " +
-                "efficiently, unlike other apps.",
+        fileName = "cryptostamped_image.png",
+        iconName = "cryptostamped_logo.jpg",
+        skills = listOf("kotlin", "OOP", "NFC", "Retrofit", "Firebase Crashlitics",
+            "Camera", "QRScaner", "Firebase ML", "swift"
+        ), //todo: add stack iOS
+        description = "Приложение является клиентской частью сервиса Cryptostamped и позволяет " +
+                "сканировать созданные нами QR-коды и коды DATAMATRIX, а также NFC-метки. " +
+                "Содержание созданных нами кодов открывается в структурированном виде. Приложение " +
+                "также позволяет сканировать все другие QR-коды и NFC-теги, а не только наши " +
+                "собственные. В этом случае их веб-контент открывается встроенным браузером. " +
+                "Другой контент просто отображается на экране. Приложение позволяет вручную вводить " +
+                "наши сервисные идентификаторы в тех случаях, когда считывать их с QR-кода уже " +
+                "невозможно. Идентификатор можно найти на наклейке рядом с QR-кодом. Приложение " +
+                "оптимизирует настройки камеры устройства для более эффективного считывания " +
+                "QR-кодов, в отличие от других приложений.",
         websiteUrl = "https://cryptostamped.com/",
         androidUrl = "https://play.google.com/store/apps/details?id=com.alt.karman.cryptostamped",
         iOSUrl = "https://apps.apple.com/us/app/cryptostamped/id1458860901"
