@@ -12,15 +12,23 @@ import app.nocamelstyle.myresumeapp.projects
 
 class PortfolioFavouritesFragment : Fragment(R.layout.fragment_portfolio_favourites) {
 
-    private val ids by lazy { Setting(requireContext()).favouritesIds }
+    private val ids get() = Setting(requireContext()).favouritesIds
+    private lateinit var stubView: View
+    private lateinit var listView: RecyclerView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<RecyclerView>(R.id.projectsRV).apply {
-            layoutManager = LinearLayoutManager(requireContext())
-            adapter = ProjectsAdapter(requireContext(), projects.filter { ids.contains(it.id) })
-        }
+        listView = view.findViewById(R.id.projectsRV)
+        stubView = view.findViewById(R.id.stub)
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        stubView.visibility = if (ids.isEmpty()) View.VISIBLE else View.GONE
+        listView.adapter =
+            ProjectsAdapter(requireContext(), projects.filter { ids.contains(it.id) })
     }
 
 }
