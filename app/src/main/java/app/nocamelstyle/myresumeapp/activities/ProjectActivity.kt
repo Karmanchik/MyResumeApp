@@ -60,3 +60,5 @@ class ProjectActivity : AppCompatActivity() {
     }
 
 }
+
+//todo: delete top status bar margin

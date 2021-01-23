@@ -3,11 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".fragments.PortfolioContainerFragment">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
+        app:tabIndicatorColor="@color/main"
+        app:tabSelectedTextColor="@color/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

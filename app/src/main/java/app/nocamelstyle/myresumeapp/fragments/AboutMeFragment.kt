@@ -76,3 +76,7 @@ class AboutMeFragment : Fragment() {
     }
 
 }
+
+//todo:
+//add education
+//add hobbies

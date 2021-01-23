@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:ignore="ContentDescription"
-    tools:context=".fragments.AboutMeFragment">
+    tools:context=".fragments.AboutMeFragment"
+    tools:ignore="ContentDescription">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,41 +13,34 @@
         android:background="#fff"
         android:orientation="vertical">
 
-
         <ImageView
-            android:scaleType="centerCrop"
-            android:maxHeight="500dp"
             android:id="@+id/avatarIV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
+            android:maxHeight="500dp"
+            android:scaleType="centerCrop"
             tools:src="@tools:sample/backgrounds/scenic" />
 
         <TextView
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:textSize="18sp"
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
             android:gravity="center"
-            android:text="Andrey Kormachenko" />
+            android:text="Andrey Kormachenko"
+            android:textSize="18sp" />
 
         <TextView
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
+            style="@style/title"
             android:text="Связь со мной" />
 
         <TableLayout
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -57,17 +50,18 @@
                 <ImageView
                     android:id="@+id/github_link_iv"
                     style="@style/social_link_icon"
-                    android:src="@drawable/github" />
+                    android:padding="5dp"
+                    android:src="@drawable/ic_github" />
 
                 <ImageView
                     android:id="@+id/email_link_iv"
                     style="@style/social_link_icon"
-                    android:src="@drawable/email" />
+                    android:src="@drawable/ic_baseline_mail_outline_24" />
 
                 <ImageView
                     android:id="@+id/linkedin_link_iv"
                     style="@style/social_link_icon"
-                    android:src="@drawable/linkedin" />
+                    android:src="@drawable/ic_linkedin_outlined" />
 
             </TableRow>
 
@@ -79,35 +73,47 @@
                 <ImageView
                     android:id="@+id/telegram_link_iv"
                     style="@style/social_link_icon"
-                    android:src="@drawable/telegram" />
+                    android:src="@drawable/ic_telegram" />
 
                 <ImageView
                     android:id="@+id/whatsapp_link_iv"
                     style="@style/social_link_icon"
-                    android:src="@drawable/whatsapp" />
+                    android:src="@drawable/ic_bxl_whatsapp" />
 
                 <ImageView
                     android:id="@+id/skype_link_iv"
                     style="@style/social_link_icon"
-                    android:src="@drawable/skype" />
+                    android:src="@drawable/ic_skype_outlined" />
 
             </TableRow>
 
         </TableLayout>
 
         <TextView
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:id="@+id/textView6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/title"
             android:text="Навыки" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:id="@+id/skillsRV"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            style="@style/title"
+            android:text="Образование" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="years + name organization" />
+
+        <TextView
+            style="@style/title"
+            android:text="Хобби" />
+
     </LinearLayout>
 </ScrollView>

@@ -10,7 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyResumeApp">
-        <activity android:name=".activities.ProjectActivity"></activity>
+
+        <activity
+            android:theme="@style/with_photo"
+            android:name=".activities.ProjectActivity" />
         <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +24,7 @@
         <activity android:name=".activities.OnBoardingActivity" />
         <activity android:name=".activities.ResumePdfActivity" />
         <activity android:name=".activities.MainActivity" />
+
     </application>
 
 </manifest>

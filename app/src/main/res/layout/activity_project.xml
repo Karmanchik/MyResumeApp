@@ -11,38 +11,61 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <ImageView
-            android:maxHeight="600dp"
-            android:id="@+id/project_details_avatar"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/github" />
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/project_details_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxHeight="600dp"
+                android:layout_marginBottom="25dp"
+                app:srcCompat="@drawable/ic_github" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/favouritesFab"
+                android:backgroundTint="@color/main"
+                app:tint="#fff"
+                app:srcCompat="@drawable/ic_baseline_star_outline_24"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
 
         <TextView
-            android:gravity="center"
+            style="@style/title"
             android:id="@+id/project_details_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:text="[project name]" />
 
         <TextView
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/main"
+            android:gravity="fill"
             android:id="@+id/project_details_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="[description]" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/title"
             android:text="Стек технологий" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/technologyRV"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -51,17 +74,20 @@
             <ImageView
                 android:id="@+id/webUrl"
                 style="@style/social_link_icon"
-                app:srcCompat="@drawable/ic_baseline_settings_24" />
+                android:padding="5dp"
+                app:srcCompat="@drawable/ic_site" />
 
             <ImageView
                 android:id="@+id/googlePlayUrl"
                 style="@style/social_link_icon"
-                app:srcCompat="@drawable/ic_baseline_settings_24" />
+                android:padding="5dp"
+                app:srcCompat="@drawable/ic_google_play" />
 
             <ImageView
                 android:id="@+id/appStoreUrl"
                 style="@style/social_link_icon"
-                app:srcCompat="@drawable/ic_baseline_settings_24" />
+                android:padding="5dp"
+                app:srcCompat="@drawable/ic_logo_apple_appstore" />
 
         </LinearLayout>
 
